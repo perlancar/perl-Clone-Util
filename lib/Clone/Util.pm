@@ -70,6 +70,11 @@ means only copying the first level of data.
 
  $clone->[0] = "zero"; # $clone becomes ["zero",1,...] but $array still [0,1,...]
 
+You can perform shallow copying trivially yourself using:
+
+ my $cloned_array = [@$array];
+ my $cloned_hash  = {%$hash};
+
 
 =head1 SEE ALSO
 
