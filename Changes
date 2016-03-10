@@ -1,5 +1,11 @@
 Revision history for Clone-Util
 
+0.03    2016-03-10 (PERLANCAR)
+
+	- Provide clone() (from Function::Fallback::CoreOrPP) for import,
+	  for convenience.
+
+
 0.02    2016-03-10 (PERLANCAR)
 
 	- Add sclone().
