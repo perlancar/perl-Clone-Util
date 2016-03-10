@@ -61,13 +61,17 @@ None of the functions are exported by default, but they are exportable.
 
 =head2 clone($data) => $cloned
 
-This is just re-exported L<Function::Fallback::CoreOrPP>'s C<clone()>.
+This is just re-exported L<Function::Fallback::CoreOrPP>'s C<clone()>, provided
+for convenience.
 
 =head2 modclone(\&code, $data) => $clone
 
 Clone C<$data> and then run code. Code will be given the clone of data. For
 convenience, C<$_> will also be localized and set to the clone of data. So you
 can access the clone using C<$_> in addition to C<$_[0]>.
+
+This function can be used to create a data structure based on another structure
+with some modification.
 
 =head2 sclone($data) => $clone
 
