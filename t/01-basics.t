@@ -4,8 +4,12 @@ use 5.010;
 use strict;
 use warnings;
 
-use Clone::Util qw(modclone sclone);
+use Clone::Util qw(clone modclone sclone);
 use Test::More 0.98;
+
+subtest "clone" => sub {
+    is_deeply(clone([1,2,3]), [1,2,3]);
+};
 
 subtest "modclone" => sub {
     my $data = [1,2,3];

@@ -10,7 +10,7 @@ use warnings;
 use Function::Fallback::CoreOrPP qw(clone);
 
 use Exporter qw(import);
-our @EXPORT_OK = qw(modclone sclone);
+our @EXPORT_OK = qw(clone modclone sclone);
 
 sub modclone(&$;@) {
     my $code = shift;
@@ -57,6 +57,12 @@ sub sclone($) {
 
 =head1 FUNCTIONS
 
+None of the functions are exported by default, but they are exportable.
+
+=head2 clone($data) => $cloned
+
+This is just re-exported L<Function::Fallback::CoreOrPP>'s C<clone()>.
+
 =head2 modclone(\&code, $data) => $clone
 
 Clone C<$data> and then run code. Code will be given the clone of data. For
@@ -83,6 +89,6 @@ You can perform shallow copying trivially yourself using:
 
 =head1 SEE ALSO
 
-L<Function::Fallback::CoreOrPP>'s C<clone()> is used for cloning.
+L<Function::Fallback::CoreOrPP>
 
 =cut
