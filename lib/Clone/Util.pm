@@ -12,12 +12,17 @@ use Function::Fallback::CoreOrPP qw(clone);
 use Exporter qw(import);
 our @EXPORT_OK = qw(modclone sclone);
 
-sub modclone(&$) {
-    my ($code, $data) = @_;
+sub modclone(&$;@) {
+    my $code = shift;
+    my $data = shift;
     my $clone = clone($data);
     local $_ = $clone;
     $code->($clone);
-    $clone;
+    if (@_ || wantarray) {
+        return ($clone, @_);
+    } else {
+        return $clone;
+    }
 }
 
 sub sclone($) {
@@ -42,9 +47,9 @@ sub sclone($) {
  my $row = {name=>'ujang', gender=>'m', nationality=>'id'};
  my $table = [
      $row,
-     (modclone { $_->{name} = 'budi' } $row),
-     (modclone { $_->{name} = 'asep' } $row),
-     (modclone { $_->{name} = 'rini'; $_->{gender} = 'f' } $row),
+     modclone { $_->{name} = 'budi' } $row,
+     modclone { $_->{name} = 'asep' } $row,
+     modclone { $_->{name} = 'rini'; $_->{gender} = 'f' } $row,
  ];
 
  my $shallow_clone = sclone($data);
