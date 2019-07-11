@@ -1,10 +1,10 @@
-0.03    2016-03-10 (PERLANCAR)
+0.03    2016-03-10  Released-By: PERLANCAR
 
 	- Provide clone() (from Function::Fallback::CoreOrPP) for import,
 	  for convenience.
 
 
-0.02    2016-03-10 (PERLANCAR)
+0.02    2016-03-10  Released-By: PERLANCAR
 
 	- Add sclone().
 
@@ -12,6 +12,6 @@
 	  parentheses in 'modclone {...} $data, modclone {...} $data'.
 
 
-0.01    2016-03-10 (PERLANCAR)
+0.01    2016-03-10  Released-By: PERLANCAR
 
         - First release.
